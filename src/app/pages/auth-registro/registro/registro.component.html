@@ -1,1 +1,25 @@
-<p>registro works!</p>
+<div class="container">
+    <div class="registerForm">
+        <img src="../../../../assets/user-icon.png" alt="user">
+        <h1>Register</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="controls-form">
+                <mat-form-field appearance="fill" class="register-input" >
+                  <input matInput placeholder="email" value="" autocomplete="off" formControlName="email">
+                </mat-form-field>
+              
+                <mat-form-field appearance="fill" class="register-input">
+                    <input type="password" matInput placeholder="Password" value="" autocomplete="off" formControlName="password">
+                </mat-form-field>
+
+              <mat-form-field appearance="fill" class="register-input">
+                <input type="password" matInput placeholder="Confirm password" value="" autocomplete="off" formControlName="confPassword">
+            </mat-form-field>
+          </div>
+              <button  type="submit"
+                mat-raised-button color="primary"
+                class="register-input register-btn"
+                [disabled]="registerForm.invalid">Enviar</button>
+        </form>        
+    </div>   
+</div>
