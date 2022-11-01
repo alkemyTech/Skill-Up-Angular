@@ -18,9 +18,11 @@ export class RegistroComponent implements OnInit {
     private router: Router
     ) {
     this.registerForm = this.fb.group({
+      fName:[ "", Validators.required ],
+      lName:[ "", Validators.required ],
       email: [ "", Validators.required ],
       password: [ "", Validators.required ],
-      confPassword:[ "", Validators.required ]
+      
 
     });
    }
