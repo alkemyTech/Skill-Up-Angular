@@ -16,9 +16,6 @@
   mat-card-content {
     display: flex;
     justify-content: center;
-    
-   
-    
   }
 
   .error {
@@ -27,13 +24,22 @@
    
     background-color: red;
   }
+  .buttons{
+    text-align: center;
+  }
 
   .Login {
     
     justify-content: flex-start;
+    background-color: #c8dce6;
   }
   .Register {
-    
+    margin-left: 3px;
+    margin-right: 3px;
     justify-content:flex-end;
+    background-color: #c8dce6;
+  }
+  .ForgotPass{
+    background-color: #c8dce6;
   }
  
