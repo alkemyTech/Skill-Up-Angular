@@ -1,3 +1,4 @@
+import { AngularMaterialModule } from './shared/components/modules/angular-material/angular-material.module';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
+    AngularMaterialModule,
     NgbModule,
   ],
   providers: [],
