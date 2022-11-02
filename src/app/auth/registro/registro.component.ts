@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
 import { AuthModule } from '../auth.module';
 
-=======
->>>>>>> 82e54edd1c02890d3a200717cb2f9beebe43952a
+
 
 @Component({
   selector: 'app-registro',
@@ -27,7 +25,7 @@ export class RegistroComponent implements OnInit {
       lName:[ "", Validators.required ],
       email: [ "", Validators.required ],
       password: [ "", Validators.required ],
-      
+
 
     });
    }
@@ -42,8 +40,4 @@ export class RegistroComponent implements OnInit {
     }
   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 82e54edd1c02890d3a200717cb2f9beebe43952a

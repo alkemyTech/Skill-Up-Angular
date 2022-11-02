@@ -32,10 +32,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
-<<<<<<< HEAD
-import { ReactiveFormsModule } from '@angular/forms';
-=======
->>>>>>> 82e54edd1c02890d3a200717cb2f9beebe43952a
 
 const materialModules = [
   CdkTreeModule,
@@ -69,17 +65,11 @@ const materialModules = [
   MatGridListModule,
   MatRadioModule,
   MatDatepickerModule,
-<<<<<<< HEAD
   MatTooltipModule,
-  ReactiveFormsModule
-=======
-  MatTooltipModule
->>>>>>> 82e54edd1c02890d3a200717cb2f9beebe43952a
 ];
 @NgModule({
   imports: [
     CommonModule,
-    ...materialModules
   ],
   exports: [
     ...materialModules
