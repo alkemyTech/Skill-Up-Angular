@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { HeaderComponent } from './components/header/header.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthRoutingModule } from '../auth/auth-routing.module';
+import { BancoRoutingModule } from '../banco/banco-routing.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HeaderComponent,
+    PageNotFoundComponent,
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    AuthRoutingModule,
+    BancoRoutingModule
+  ],
+  exports:[
+    HeaderComponent
   ]
 })
 export class SharedModule { }
