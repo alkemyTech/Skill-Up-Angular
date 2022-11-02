@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SweetalertComponent } from 'src/app/alerts/sweetalert.component';
+import { SweetalertComponent } from 'src/app/shared/components/alerts/sweetalert.component';
 
 @Component({
   selector: 'app-login',
