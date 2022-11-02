@@ -19,10 +19,4 @@ export class HeaderComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
-  salir(){
-    console.log('saliendo...')
-    this.router.navigate(['auth/login']);
-
-  }
-
 }

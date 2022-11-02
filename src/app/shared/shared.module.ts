@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthRoutingModule } from '../auth/auth-routing.module';
+import { BancoRoutingModule } from '../banco/banco-routing.module';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    BancoRoutingModule
   ],
   exports:[
     HeaderComponent
