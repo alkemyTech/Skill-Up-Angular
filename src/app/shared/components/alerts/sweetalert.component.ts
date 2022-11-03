@@ -12,7 +12,7 @@ export class SweetalertComponent {
   SuccessAlert(){
     Swal.fire({
       icon: 'success',
-      title: 'Login success',
+      title: 'Haz ingresado correctamente',
       showConfirmButton: false,
       timer: 1500
     })

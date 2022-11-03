@@ -31,8 +31,6 @@ export class RegistroComponent {
    register(){
     const {first_name, email, password, last_name}  = this.miFormulario.value
     this.auth.registro(first_name, last_name, email, password).subscribe(data => {
-      localStorage.setItem('token', JSON.stringify(data))
-      console.log(data)
     })
    }
 

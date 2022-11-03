@@ -19,4 +19,9 @@ export class HeaderComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['auth/login'])
+  }
+
 }
