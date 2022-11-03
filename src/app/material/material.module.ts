@@ -70,10 +70,14 @@ const materialModules = [
 @NgModule({
   imports: [
     CommonModule,
+
     ...materialModules
+
   ],
   exports: [
     ...materialModules
   ],
 })
+
 export class MaterialModule {}
+

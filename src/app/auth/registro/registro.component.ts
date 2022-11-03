@@ -1,15 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { AuthModule } from '../auth.module';
+
+
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.scss']
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent {
 
-  constructor() { }
+  //variables
+  miFormulario: FormGroup = this.fb.group({
+    first_name: ['', [Validators.required]],
+    last_name:['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password:['', [Validators.required]],
+  })
+  isSubmitted = false;
 
-  ngOnInit(): void {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private auth:AuthService) {
+   }
+
+   register(){
+    const {first_name, email, password, last_name}  = this.miFormulario.value
+    this.auth.registro(first_name, last_name, email, password).subscribe(data => {
+      localStorage.setItem('token', JSON.stringify(data))
+      console.log(data)
+    })
+   }
+
+
   }
-
-}

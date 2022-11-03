@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SweetalertComponent } from './components/alerts/sweetalert.component';
+import { AuthRoutingModule } from '../auth/auth-routing.module';
+import { BancoRoutingModule } from '../banco/banco-routing.module';
+
 
 
 @NgModule({
@@ -10,9 +13,15 @@ import { SweetalertComponent } from './components/alerts/sweetalert.component';
     HeaderComponent,
     PageNotFoundComponent,
     SweetalertComponent
+
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AuthRoutingModule,
+    BancoRoutingModule
+  ],
+  exports:[
+    HeaderComponent
   ]
 })
 export class SharedModule { }
