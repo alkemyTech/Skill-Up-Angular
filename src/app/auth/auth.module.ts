@@ -5,12 +5,14 @@ import { RegistroComponent } from './registro/registro.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material/material.module';
+import { TerminosComponent } from './registro/terminos/terminos.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegistroComponent,
+    TerminosComponent,
     
     
   ],

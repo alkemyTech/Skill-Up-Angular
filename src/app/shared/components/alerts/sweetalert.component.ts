@@ -26,6 +26,14 @@ export class SweetalertComponent {
       confirmButtonText: 'Reintentar'
     })
   }
+  noAceptoAlert(){
+    Swal.fire({
+      title: '¡Que pena!',
+      text: 'Esperamos volver a verte',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+    })
+  }
 
 
 }
