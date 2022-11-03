@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from 'src/app/core/model/user.interface';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { SweetalertComponent } from 'src/app/shared/components/alerts/sweetalert.component';
 
 @Component({
@@ -9,25 +12,31 @@ import { SweetalertComponent } from 'src/app/shared/components/alerts/sweetalert
 })
 export class LoginComponent  {
 sweetalert:SweetalertComponent=  new SweetalertComponent
-  user = {
-    email:'',
-    password:''
-  }
-  constructor() { }
+  
+    email:string='';
+    password:string= '';
+  
+  constructor(private router:Router, private authService:AuthService) { }
 
   form: FormGroup = new FormGroup({
-    Email: new FormControl('',[Validators.required, Validators.email]),
-    Password: new FormControl('',[Validators.required,Validators.minLength(6)]),
+    email: new FormControl('',[Validators.required, Validators.email]),
+    password: new FormControl('',[Validators.required,Validators.minLength(6)]),
   });
 
-  logIn() {
-    if (this.form.valid){
-      this.user=this.form.value; 
-     this.sweetalert.SuccessAlert();
-      console.log(this.form.value);    
-    }else{ 
-      this.sweetalert.ErrorAlert();
-    }
+  send(user:User) {
+      (this.form.valid)
+      user=this.form.value; 
+      this.authService.login(user).subscribe(data=>{
+      localStorage.setItem('token',data.token);
+      this.sweetalert.SuccessAlert();
+      this.router.navigate(['home']);
+      console.log(data);    
+     }, err=>{
+      console.log(err);
+     this.sweetalert.ErrorAlert();
+    });
+    
   }
-  
+
 }
+ 
