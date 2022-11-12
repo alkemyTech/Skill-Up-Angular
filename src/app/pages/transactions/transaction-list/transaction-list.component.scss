@@ -1,0 +1,18 @@
+.table-container{
+    width: 80%;
+    min-width: 400px;
+    margin: 0 auto;
+}
+.table-footer{
+    display: flex;
+    justify-content: space-between;
+}
+.action{
+    margin: 5px;
+}
+
+.scroll {
+    max-height: 300px;
+    overflow-y: auto;
+  
+  }

@@ -1,0 +1,26 @@
+.fondo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('https://fondosmil.com/fondo/71322.jpg');
+   //que la imagen ocupe toda la pantalla
+    background-size: cover;
+    background-position: center
+    
+  }
+  
+  .custom-link {
+    text-decoration: none;
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .login {
+    opacity: 0.9;
+    box-shadow: 2px 2px 2px 1px rgba(10, 10, 10, 0.39);
+  }
+  
+  .login:hover {
+    opacity: 1.0;
+  }

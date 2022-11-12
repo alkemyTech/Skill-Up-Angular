@@ -1,0 +1,21 @@
+<div  class="" > 
+    <div class="loader__container" *ngIf="isLoading">
+      <div class="loader">
+      </div>
+    </div>
+
+
+    <div class="btn-group " *ngIf="accountListLoad" >
+      <h6 class="dropdown-toggle m-1" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+       Mis cuentas 
+      </h6>
+      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton2" >
+        <li  *ngFor="let account of accountList">
+          <a class="dropdown-item manito" (click)="setAccount(account)" > Nº: {{account.id}} | Monto: $ {{account.money}}</a>
+      </li>
+      </ul>
+    </div>
+
+    
+   
+  </div>
