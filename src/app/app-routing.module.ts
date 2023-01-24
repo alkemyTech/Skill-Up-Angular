@@ -1,11 +1,55 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/homepage/home.component';
+import { LoggedGuard } from './core/guards/logged.guard';
+import { UnloggedGuard } from './core/guards/unlogged.guard';
 
-const routes: Routes = [  
+const routes: Routes = [
+  {
+    path: 'auth/login',
+    canActivate: [UnloggedGuard],
+    loadChildren: () =>
+      import('./pages/auth-login/auth-login.module').then(
+        (m) => m.AuthLoginModule
+      ),
+  },
+  {
+    path: 'auth/register',
+    canActivate: [UnloggedGuard],
+    loadChildren: () =>
+      import('./pages/auth-registro/auth-registro.module').then(
+        (m) => m.AuthRegistroModule
+      ),
+  },
+  {
+    path: '',
+    canActivate: [LoggedGuard],
+    component: HomeComponent,
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'perfil-detail',
+    loadChildren: () =>
+      import('./pages/usuarios/perfil-detail/perfil-detail.module').then(
+        (m) => m.PerfilDetailModule
+      ),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./pages/page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule
+      ),
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
